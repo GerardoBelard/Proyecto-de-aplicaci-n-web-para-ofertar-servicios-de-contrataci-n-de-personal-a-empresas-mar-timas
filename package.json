@@ -3,14 +3,15 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./dist-server/bin/www",
-    "w:d": "babel-watch ./server/bin/www",
+    "start": "cross-env NODE_ENV=production node ./dist-server/bin/www",
+    "dev": "cross-env NODE_ENV=development babel-watch ./server/bin/www",
     "clean": "rimraf dist-server",
-    "b:s": "npm run clean && babel ./server --out-dir dist-server --copy-files"
+    "build": "npm run clean && babel ./server --out-dir dist-server --copy-files"
   },
   "dependencies": {
     "all": "0.0.0",
     "cookie-parser": "^1.4.5",
+    "cross-env": "^7.0.3",
     "debug": "^2.6.9",
     "express": "~4.16.1",
     "hbs": "^4.0.6",
@@ -25,6 +26,8 @@
     "@babel/core": "^7.16.0",
     "@babel/node": "^7.16.0",
     "@babel/preset-env": "^7.16.0",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "babel-preset-minify": "^0.5.1",
     "babel-watch": "^7.6.0"
   }
 }
