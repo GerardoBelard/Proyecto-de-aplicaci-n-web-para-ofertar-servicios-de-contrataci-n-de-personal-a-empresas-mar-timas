@@ -1,5 +1,6 @@
 // Importando a winston
 import winston, { format } from 'winston';
+import appRoot from 'app-root-path';
 
 // Componentes para crear el formato personalizado
 const { combine, timestamp, printf, uncolorize, colorize, json } = format;
