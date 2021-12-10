@@ -23,6 +23,7 @@ const app = express();
 
 // verficiar modo ejecucion de la aplicacion
 if (env === 'development') {
+  winston.info('Ejecutando en modo desarrollador');
   console.log('> Excecuting in Development Mode: Webpack hot Reloading');
   // ruta del Hot module replasmen
   // reload=true: habilita recarga fronted al tener cambios en codigo fuente del fronted
